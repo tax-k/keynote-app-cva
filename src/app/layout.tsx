@@ -1,10 +1,15 @@
 import './globals.css';
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
-
+import { Inter, Source_Code_Pro } from 'next/font/google';
 import Providers from '@/utils/provider';
 
 const inter = Inter({ subsets: ['latin'] });
+
+const sourceCodePro = Source_Code_Pro({
+  subsets: ['latin'],
+  variable: '--font-source-code-pro',
+  weight: ['200', '400', '500', '700'],
+});
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -18,7 +23,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${inter.className} ${sourceCodePro.className}`}>
         <Providers>{children}</Providers>
       </body>
     </html>

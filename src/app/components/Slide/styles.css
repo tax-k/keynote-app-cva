@@ -22,7 +22,7 @@ body {
 }
 
 * {
-  font-family: sofia-pro, sans-serif;
+  /* font-family: sofia-pro, sans-serif; */
   font-weight: 400;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
@@ -31,7 +31,7 @@ body {
 h1,
 h2,
 h3 {
-  font-family: sofia-pro, sans-serif;
+  /* font-family: sofia-pro, sans-serif; */
   font-weight: 600;
   font-style: normal;
 }
@@ -154,9 +154,8 @@ section {
 
 section > div {
   width: 100vw;
-  aspect-ratio: 2/3;
   position: relative;
-  max-height: 90vh;
+  max-height: 99.9vh;
   background: var(--white);
   overflow: hidden;
 }

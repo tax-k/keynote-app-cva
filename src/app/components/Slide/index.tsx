@@ -16,8 +16,13 @@ export function Slide({
 }) {
   const [isInView, setIsInView] = useState(false);
 
+  const sectionStyle = {
+    height: id === 1 ? '200vh' : '100vh',
+    scrollSnapAlign: id === 1 ? 'start' : 'center',
+  };
+
   return (
-    <section>
+    <section style={sectionStyle}>
       <motion.div
         initial={false}
         animate={
@@ -29,8 +34,7 @@ export function Slide({
         viewport={{ once: true }}
         onViewportEnter={() => setIsInView(true)}
       >
-        <div key={id}>
-          ddfdfdf
+        <div key={id} className="overflow-y-scroll">
           {contents}
         </div>
       </motion.div>
