@@ -2,11 +2,20 @@
 
 import { motion, useScroll, useSpring } from 'framer-motion';
 import { Slide } from './components/Slide';
+import { CompareView } from './components/Compare';
 
-const KEYNOTE_SLIDE_PAGES = [
+type TSlideSection = {
+  id: number;
+  title: string;
+  desc?: string;
+  contents?: React.ReactNode;
+};
+
+const KEYNOTE_SLIDE_PAGES: TSlideSection[] = [
   {
     id: 1,
     title: 'Keynote',
+    contents: <CompareView />,
   },
   {
     id: 2,
@@ -36,7 +45,7 @@ export default function Home() {
   return (
     <motion.div>
       {KEYNOTE_SLIDE_PAGES.map((slide, _) => {
-        return <Slide id={slide.id} key={slide.id} />;
+        return <Slide id={slide.id} key={slide.id} contents={slide.contents} />;
       })}
 
       <motion.div className="progress" style={{ scaleX }} />

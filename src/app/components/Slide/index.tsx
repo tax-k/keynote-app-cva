@@ -7,7 +7,13 @@ import './styles.css';
 const hiddenMask = `repeating-linear-gradient(to right, rgba(0,0,0,0) 0px, rgba(0,0,0,0) 30px, rgba(0,0,0,1) 30px, rgba(0,0,0,1) 30px)`;
 const visibleMask = `repeating-linear-gradient(to right, rgba(0,0,0,0) 0px, rgba(0,0,0,0) 0px, rgba(0,0,0,1) 0px, rgba(0,0,0,1) 30px)`;
 
-export function Slide({ id }: { id: number }) {
+export function Slide({
+  id,
+  contents,
+}: {
+  id: number;
+  contents?: React.ReactNode;
+}) {
   const [isInView, setIsInView] = useState(false);
 
   return (
@@ -23,7 +29,10 @@ export function Slide({ id }: { id: number }) {
         viewport={{ once: true }}
         onViewportEnter={() => setIsInView(true)}
       >
-        <div key={id}>ddfdfdf</div>
+        <div key={id}>
+          ddfdfdf
+          {contents}
+        </div>
       </motion.div>
     </section>
   );
